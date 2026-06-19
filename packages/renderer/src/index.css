@@ -1,0 +1,159 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  --font-mono: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: #ffffff;
+  color: #333333;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+  }
+}
+
+/* Lexical Editor Theme Classes - Typora Inspired */
+.editor-heading-h1 {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.editor-heading-h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid #eaecef;
+  padding-bottom: 0.3em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .editor-heading-h2 {
+    border-bottom-color: #3e3e3e;
+  }
+}
+
+.editor-heading-h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.editor-heading-h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.editor-paragraph {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.editor-quote {
+  border-left: 4px solid #dfe2e5;
+  padding: 0 1rem;
+  color: #6a737d;
+  margin: 1rem 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  .editor-quote {
+    border-left-color: #4b5563;
+    color: #9ca3af;
+  }
+}
+
+.editor-list-ol {
+  list-style-type: decimal;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.editor-list-ul {
+  list-style-type: disc;
+  padding-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.editor-listitem {
+  margin-bottom: 0.25rem;
+}
+
+.editor-text-bold {
+  font-weight: 600;
+}
+
+.editor-text-italic {
+  font-style: italic;
+}
+
+.editor-text-underline {
+  text-decoration: underline;
+}
+
+.editor-text-strikethrough {
+  text-decoration: line-through;
+}
+
+.editor-text-code {
+  background-color: rgba(27,31,35,0.05);
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .editor-text-code {
+    background-color: rgba(255,255,255,0.1);
+  }
+}
+
+.editor-code {
+  background-color: #f6f8fa;
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1rem 0;
+  line-height: 1.45;
+}
+
+@media (prefers-color-scheme: dark) {
+  .editor-code {
+    background-color: #2d2d2d;
+  }
+}
+
+/* Caret animation */
+.editor-input {
+  caret-color: #000;
+}
+
+@media (prefers-color-scheme: dark) {
+  .editor-input {
+    caret-color: #fff;
+  }
+}
+
+/* Selection color */
+::selection {
+  background-color: rgba(0, 120, 215, 0.3);
+}
