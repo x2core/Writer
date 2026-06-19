@@ -157,3 +157,20 @@ body {
 ::selection {
   background-color: rgba(0, 120, 215, 0.3);
 }
+
+@media print {
+  .sidebar, .top-menu {
+    display: none !important;
+  }
+
+  .editor-container {
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+  }
+
+  body, #root, .App {
+    background-color: white !important;
+    color: black !important;
+  }
+}
