@@ -7,3 +7,5 @@ function send(channel: string, message: string) {
 }
 
 export {sha256sum, versions, send};
+export {fs} from './fs.js';
+export {plugins} from './plugins.js';

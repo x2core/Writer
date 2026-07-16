@@ -7,6 +7,8 @@ import {hardwareAccelerationMode} from './modules/HardwareAccelerationModule.js'
 import {autoUpdater} from './modules/AutoUpdater.js';
 import {allowInternalOrigins} from './modules/BlockNotAllowdOrigins.js';
 import {allowExternalUrls} from './modules/ExternalUrls.js';
+import {fileSystemIPC} from './modules/FileSystemIPC.js';
+import {pluginManagerIPC} from './modules/PluginManagerIPC.js';
 
 
 export async function initApp(initConfig: AppInitConfig) {
@@ -24,6 +26,8 @@ export async function initApp(initConfig: AppInitConfig) {
     .init(allowInternalOrigins(
       new Set(initConfig.renderer instanceof URL ? [initConfig.renderer.origin] : []),
     ))
+    .init(fileSystemIPC())
+    .init(pluginManagerIPC())
     .init(allowExternalUrls(
       new Set(
         initConfig.renderer instanceof URL

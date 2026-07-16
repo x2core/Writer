@@ -11,6 +11,7 @@ import { ListItemNode, ListNode } from '@lexical/list';
 import { CodeHighlightNode, CodeNode } from '@lexical/code';
 import { AutoLinkNode, LinkNode } from '@lexical/link';
 import { TRANSFORMERS } from '@lexical/markdown';
+import { MarkdownPlugin } from './MarkdownPlugin';
 
 const theme = {
   ltr: 'ltr',
@@ -88,7 +89,12 @@ function onError(error: Error) {
   console.error(error);
 }
 
-function Editor() {
+interface Props {
+  content: string;
+  onChange: (content: string) => void;
+}
+
+function Editor({ content, onChange }: Props) {
   const initialConfig = {
     namespace: 'TyporaClone',
     theme,
@@ -128,6 +134,7 @@ function Editor() {
           <HistoryPlugin />
           <AutoFocusPlugin />
           <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
+          <MarkdownPlugin markdown={content} onChange={onChange} />
         </div>
       </div>
     </LexicalComposer>
